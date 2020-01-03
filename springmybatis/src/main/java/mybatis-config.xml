@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+     <!-- 控制台会输出日志内容 : crud的操作相关的sql语句，可以显示在控制台 ， 错误信息也会显示在控制台--> 
+ 	<settings>
+		<setting name="logImpl" value="STDOUT_LOGGING"/>
+	</settings> 
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" 
+            value="jdbc:mysql://localhost:3306/java190901?useUnicode=true&amp;characterEncoding=utf-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+  	<mapper resource="com/hqyj/mybatis/mapper/xml/StudentMapper.xml"/>
+  	<mapper resource="com/hqyj/mybatis/mapper/xml/UserMapper.xml"/>
+   <!--  <mapper resource="com/hqyj/mybatis/mapper/xml/CourseMapper.xml"/>
+    <mapper resource="com/hqyj/mybatis/mapper/xml/SchoolMapper.xml"/> -->
+  </mappers>
+</configuration>

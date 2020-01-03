@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="aom.hqyj.ymbatis.mapper.UserMapper">
+  	<insert id="insertUser" parameterType="com.hqyj.mybatis.entity.User">
+  		insert into user(user_name,user_pwd) values(#{user_name} , #{user_pwd})
+  	</insert>
+	<select id="getAllUser" resultType="com.hqyj.mybatis.entity.User">
+  	 select * from user
+   </select>
+  </mapper>

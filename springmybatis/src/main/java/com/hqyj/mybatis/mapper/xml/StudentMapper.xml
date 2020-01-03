@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+ <!-- namespace: 命名空间 （内容为接口的全名）-->
+<mapper namespace="aom.hqyj.ymbatis.mapper.StudentMapper">
+
+   <!-- 在mapper.xml中，完成对mapper.java中的方法的配置 -->
+   <!-- select标签： 表示对应select查询的sql语句
+        id="getAllStudent": id值对应的都是mapper.java文件中的存在的方法的名字
+        resultType="com.hqyj.mybatis.entity.Student" : 类型是List集合的泛型
+    -->
+  <select id="getAllStudent" resultType="com.hqyj.mybatis.entity.Student">
+  		select * from student
+  </select>
+  <delete id="deleteOne">
+  	delete from student where stu_id = #{abc}
+  </delete>
+  
+  <insert id="insertOne" parameterType="com.hqyj.mybatis.entity.Student">
+  	insert into student(stu_name,stu_age,stu_sex,cls_id)
+  	       values(#{stu_name},#{stu_age},#{stu_sex},#{cls_id})
+  </insert>
+  
+  <update id="updateOne" parameterType="com.hqyj.mybatis.entity.Student">
+  	update student set stu_name=#{stu_name},stu_sex=#{stu_sex},stu_age=#{stu_age},cls_id=#{cls_id}
+         where stu_id=#{stu_id}
+  </update>
+  
+</mapper>
